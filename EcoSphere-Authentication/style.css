@@ -1,0 +1,581 @@
+
+/* ============================
+   1. GLOBAL STYLES
+============================ */
+
+:root {
+    --primary: #174b3a;
+    --secondary: #4b8960;
+    --cream: #f7f7ef;
+    --white: #ffffff;
+    --dark: #20352a;
+    --text: #778178;
+    --border: #dfe6dc;
+    --error: #d94b4b;
+    --success: #319568;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: #e9eee7;
+    color: var(--dark);
+    min-height: 100vh;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* ============================
+   2. MAIN CONTAINER
+============================ */
+
+.auth-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: min(1200px, 94%);
+    min-height: 720px;
+    margin: 35px auto;
+    background: var(--cream);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 25px 80px rgba(20, 55, 37, 0.13);
+}
+
+
+/* ============================
+   3. BRAND SECTION
+============================ */
+
+.brand-section {
+    position: relative;
+    overflow: hidden;
+    padding: 45px 55px 30px;
+    background: var(--primary);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    font-family: 'Manrope', sans-serif;
+    font-size: 25px;
+    font-weight: 800;
+    color: white;
+    gap: 5px;
+    position: relative;
+    z-index: 2;
+}
+
+.logo-icon {
+    font-size: 32px;
+    color: #a7ce9b;
+}
+
+.logo-dot {
+    color: #a7ce9b;
+    margin-left: -5px;
+}
+
+.brand-content {
+    position: relative;
+    z-index: 2;
+    margin: 45px 0;
+}
+
+.brand-tag {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.12);
+    padding: 10px 15px;
+    border-radius: 30px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.brand-content h1 {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(38px, 4.2vw, 56px);
+    line-height: 1.15;
+    letter-spacing: -2px;
+    margin-bottom: 20px;
+}
+
+.brand-content h1 span {
+    color: #b7d9a9;
+}
+
+.brand-content > p {
+    font-size: 14px;
+    line-height: 1.9;
+    color: #d1e1d5;
+    max-width: 440px;
+    margin-bottom: 30px;
+}
+
+.brand-image {
+    width: 100%;
+    height: 235px;
+    object-fit: cover;
+    border-radius: 18px;
+    border: 4px solid rgba(255, 255, 255, 0.15);
+    transition: transform 0.5s ease;
+}
+
+.brand-image:hover {
+    transform: scale(1.02);
+}
+
+.brand-footer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    font-size: 11px;
+    color: #d1e1d5;
+}
+
+.brand-footer span {
+    font-size: 22px;
+}
+
+.brand-bottom {
+    position: relative;
+    z-index: 2;
+    font-size: 10px;
+    color: #b6cbbd;
+}
+
+.decor-circle {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    top: -140px;
+    right: -140px;
+}
+
+
+/* ============================
+   4. FORM SECTION
+============================ */
+
+.form-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    background: var(--cream);
+}
+
+.form-wrapper {
+    width: 100%;
+    max-width: 410px;
+}
+
+.form-container {
+    display: none;
+    animation: slideIn 0.4s ease;
+}
+
+.form-container.active {
+    display: block;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-heading {
+    margin-bottom: 35px;
+}
+
+.eyebrow {
+    color: var(--secondary);
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.form-heading h2 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 30px;
+    letter-spacing: -1px;
+    margin: 12px 0;
+    color: var(--dark);
+}
+
+.form-heading p {
+    color: var(--text);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* ============================
+   5. INPUT FIELDS
+============================ */
+
+.input-group {
+    margin-bottom: 21px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 9px;
+    color: var(--dark);
+}
+
+.input-group input {
+    width: 100%;
+    height: 50px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0 15px;
+    background: white;
+    color: var(--dark);
+    outline: none;
+    font-size: 12px;
+    transition: 0.3s;
+}
+
+.input-group input::placeholder {
+    color: #a8b0a8;
+}
+
+.input-group input:focus {
+    border-color: var(--secondary);
+    box-shadow: 0 0 0 3px rgba(75, 137, 96, 0.1);
+}
+
+.input-group input.invalid {
+    border-color: var(--error);
+    background: #fffafa;
+}
+
+.input-group input.valid {
+    border-color: var(--success);
+}
+
+
+/* PASSWORD FIELD */
+
+.password-wrapper {
+    position: relative;
+}
+
+.password-wrapper input {
+    padding-right: 65px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: none;
+    color: var(--secondary);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+/* ERROR MESSAGES */
+
+.error {
+    display: block;
+    color: var(--error);
+    font-size: 10px;
+    margin-top: 6px;
+    min-height: 12px;
+}
+
+
+/* ============================
+   6. FORM OPTIONS
+============================ */
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3px 0 27px;
+}
+
+.remember-label,
+.terms-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    color: var(--text);
+    cursor: pointer;
+}
+
+.remember-label input,
+.terms-group input {
+    accent-color: var(--primary);
+    width: 14px;
+    height: 14px;
+}
+
+.form-options a {
+    font-size: 11px;
+    color: var(--secondary);
+    font-weight: 700;
+}
+
+.form-options a:hover {
+    text-decoration: underline;
+}
+
+
+/* ============================
+   7. SUBMIT BUTTON
+============================ */
+
+.submit-btn {
+    width: 100%;
+    padding: 16px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    background: var(--secondary);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(23, 75, 58, 0.15);
+}
+
+.submit-btn:active {
+    transform: scale(0.98);
+}
+
+
+/* ============================
+   8. FORM SWITCHING
+============================ */
+
+.switch-form {
+    text-align: center;
+    font-size: 11px;
+    color: var(--text);
+    margin-top: 27px;
+}
+
+.switch-form button {
+    border: none;
+    background: none;
+    color: var(--secondary);
+    font-weight: 700;
+    margin-left: 4px;
+}
+
+.switch-form button:hover {
+    text-decoration: underline;
+}
+
+
+/* ============================
+   9. PASSWORD STRENGTH
+============================ */
+
+.strength-container {
+    margin-top: 10px;
+}
+
+.strength-bar {
+    width: 100%;
+    height: 5px;
+    border-radius: 10px;
+    background: #e4e9e1;
+    overflow: hidden;
+}
+
+.strength-bar span {
+    display: block;
+    height: 100%;
+    width: 0;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+#strengthText {
+    display: block;
+    font-size: 10px;
+    color: var(--text);
+    margin-top: 6px;
+}
+
+
+/* ============================
+   10. TERMS AND CONDITIONS
+============================ */
+
+.terms-group {
+    margin: 5px 0 22px;
+}
+
+.terms-group label {
+    align-items: flex-start;
+    line-height: 1.6;
+}
+
+
+/* ============================
+   11. SUCCESS MESSAGE
+============================ */
+
+.success-message {
+    display: none;
+    padding: 13px 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background: #e5f4e9;
+    border: 1px solid #b8ddc3;
+    color: #267347;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.success-message.show {
+    display: block;
+    animation: slideIn 0.3s ease;
+}
+
+
+/* ============================
+   12. RESPONSIVE DESIGN
+============================ */
+
+@media (max-width: 900px) {
+
+    .auth-container {
+        width: 96%;
+        margin: 20px auto;
+    }
+
+    .brand-section {
+        padding: 35px;
+    }
+
+    .form-section {
+        padding: 35px;
+    }
+
+    .brand-content h1 {
+        font-size: 40px;
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    body {
+        background: var(--cream);
+    }
+
+    .auth-container {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        grid-template-columns: 1fr;
+        min-height: 100vh;
+    }
+
+    .brand-section {
+        min-height: auto;
+        padding: 28px 25px;
+    }
+
+    .brand-content {
+        margin: 35px 0 20px;
+    }
+
+    .brand-content h1 {
+        font-size: 38px;
+    }
+
+    .brand-content > p {
+        font-size: 12px;
+    }
+
+    .brand-image {
+        height: 180px;
+    }
+
+    .brand-bottom {
+        margin-top: 15px;
+    }
+
+    .form-section {
+        padding: 45px 25px;
+    }
+
+    .form-heading h2 {
+        font-size: 26px;
+    }
+
+}
+
+@media (max-width: 380px) {
+
+    .brand-section {
+        padding: 25px 20px;
+    }
+
+    .form-section {
+        padding: 35px 20px;
+    }
+
+    .brand-content h1 {
+        font-size: 33px;
+    }
+
+    .form-options {
+        gap: 10px;
+    }
+
+}

@@ -1,0 +1,347 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EcoSphere | Login & Signup</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="auth-container">
+
+        <!-- LEFT SIDE: BRANDING -->
+
+        <section class="brand-section">
+
+            <a href="#" class="logo">
+                <span class="logo-icon">✳</span>
+                EcoSphere<span class="logo-dot">.</span>
+            </a>
+
+            <div class="brand-content">
+
+                <span class="brand-tag">
+                    ✦ LIVE CONSCIOUSLY
+                </span>
+
+                <h1>
+                    Grow with us.<br>
+                    Live <span>greener.</span>
+                </h1>
+
+                <p>
+                    Every small step creates a better tomorrow.
+                    Join our community and make sustainable
+                    living a part of your everyday journey.
+                </p>
+
+                <img
+                    src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=900&q=85"
+                    alt="Beautiful green forest"
+                    class="brand-image"
+                >
+
+                <div class="brand-footer">
+                    <span>🌿</span>
+                    <p>One planet. One responsibility. Endless possibilities.</p>
+                </div>
+
+            </div>
+
+            <div class="brand-bottom">
+                © 2026 EcoSphere. Growing towards a greener future.
+            </div>
+
+            <div class="decor-circle"></div>
+
+        </section>
+
+
+        <!-- RIGHT SIDE: AUTHENTICATION -->
+
+        <section class="form-section">
+
+            <div class="form-wrapper">
+
+                <!-- SUCCESS MESSAGE -->
+
+                <div id="successMessage" class="success-message" role="status" aria-live="polite">
+                </div>
+
+
+                <!-- LOGIN FORM -->
+
+                <div id="loginFormContainer" class="form-container active">
+
+                    <div class="form-heading">
+
+                        <span class="eyebrow">WELCOME BACK</span>
+
+                        <h2>Sign in to your account</h2>
+
+                        <p>Continue your journey towards a greener tomorrow.</p>
+
+                    </div>
+
+
+                    <form id="loginForm" novalidate>
+
+                        <!-- EMAIL -->
+
+                        <div class="input-group">
+
+                            <label for="loginEmail">Email Address</label>
+
+                            <input
+                                type="text"
+                                id="loginEmail"
+                                placeholder="Enter your email address"
+                                autocomplete="email"
+                            >
+
+                            <small class="error" id="loginEmailError"></small>
+
+                        </div>
+
+
+                        <!-- PASSWORD -->
+
+                        <div class="input-group">
+
+                            <label for="loginPassword">Password</label>
+
+                            <div class="password-wrapper">
+
+                                <input
+                                    type="password"
+                                    id="loginPassword"
+                                    placeholder="Enter your password"
+                                    autocomplete="current-password"
+                                >
+
+                                <button type="button"
+                                        class="toggle-password"
+                                        data-target="loginPassword"
+                                        aria-label="Show password">
+                                    Show
+                                </button>
+
+                            </div>
+
+                            <small class="error" id="loginPasswordError"></small>
+
+                        </div>
+
+
+                        <!-- REMEMBER AND FORGOT -->
+
+                        <div class="form-options">
+
+                            <label class="remember-label">
+                                <input type="checkbox" id="rememberMe">
+                                <span>Remember me</span>
+                            </label>
+
+                            <a href="#" id="forgotPassword">
+                                Forgot password?
+                            </a>
+
+                        </div>
+
+
+                        <button type="submit" class="submit-btn">
+                            Sign In <span>→</span>
+                        </button>
+
+                    </form>
+
+
+                    <div class="switch-form">
+                        Don't have an account?
+                        <button type="button" id="showSignup">
+                            Create account
+                        </button>
+                    </div>
+
+                </div>
+
+
+                <!-- SIGNUP FORM -->
+
+                <div id="signupFormContainer" class="form-container">
+
+                    <div class="form-heading">
+
+                        <span class="eyebrow">JOIN THE MOVEMENT</span>
+
+                        <h2>Create your account</h2>
+
+                        <p>Start making a difference, one step at a time.</p>
+
+                    </div>
+
+
+                    <form id="signupForm" novalidate>
+
+                        <!-- FULL NAME -->
+
+                        <div class="input-group">
+
+                            <label for="fullName">Full Name</label>
+
+                            <input
+                                type="text"
+                                id="fullName"
+                                placeholder="Enter your full name"
+                                autocomplete="name"
+                            >
+
+                            <small class="error" id="nameError"></small>
+
+                        </div>
+
+
+                        <!-- EMAIL -->
+
+                        <div class="input-group">
+
+                            <label for="signupEmail">Email Address</label>
+
+                            <input
+                                type="text"
+                                id="signupEmail"
+                                placeholder="Enter your email address"
+                                autocomplete="email"
+                            >
+
+                            <small class="error" id="signupEmailError"></small>
+
+                        </div>
+
+
+                        <!-- PASSWORD -->
+
+                        <div class="input-group">
+
+                            <label for="signupPassword">Password</label>
+
+                            <div class="password-wrapper">
+
+                                <input
+                                    type="password"
+                                    id="signupPassword"
+                                    placeholder="Create a password"
+                                    autocomplete="new-password"
+                                >
+
+                                <button type="button"
+                                        class="toggle-password"
+                                        data-target="signupPassword"
+                                        aria-label="Show password">
+                                    Show
+                                </button>
+
+                            </div>
+
+                            <small class="error" id="signupPasswordError"></small>
+
+                            <!-- PASSWORD STRENGTH -->
+
+                            <div class="strength-container">
+
+                                <div class="strength-bar">
+                                    <span id="strengthBar"></span>
+                                </div>
+
+                                <small id="strengthText">
+                                    Password strength: Not entered
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- CONFIRM PASSWORD -->
+
+                        <div class="input-group">
+
+                            <label for="confirmPassword">Confirm Password</label>
+
+                            <div class="password-wrapper">
+
+                                <input
+                                    type="password"
+                                    id="confirmPassword"
+                                    placeholder="Re-enter your password"
+                                    autocomplete="new-password"
+                                >
+
+                                <button type="button"
+                                        class="toggle-password"
+                                        data-target="confirmPassword"
+                                        aria-label="Show password">
+                                    Show
+                                </button>
+
+                            </div>
+
+                            <small class="error" id="confirmPasswordError"></small>
+
+                        </div>
+
+
+                        <!-- TERMS -->
+
+                        <div class="terms-group">
+
+                            <label>
+                                <input type="checkbox" id="terms">
+                                <span>
+                                    I agree to the Terms and Conditions.
+                                </span>
+                            </label>
+
+                            <small class="error" id="termsError"></small>
+
+                        </div>
+
+
+                        <button type="submit" class="submit-btn">
+                            Create Account <span>→</span>
+                        </button>
+
+                    </form>
+
+
+                    <div class="switch-form">
+                        Already have an account?
+                        <button type="button" id="showLogin">
+                            Sign in
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
